@@ -1,9 +1,17 @@
+/**
+ * The Node class which creates the linked list members
+ */
 class Node {
+  /**
+   * @param data - the value passed
+   * @param next { null | Node } - the reference to the next Node in the linked list
+   */
   constructor(data, next = null) {
     this.data = data;
     this.next = next;
   }
 }
+
 
 export default class LinkedList {
   constructor() {
@@ -11,6 +19,10 @@ export default class LinkedList {
     this.size = 0;
   }
 
+  /**
+   * Prepend a new Node to the list and assign it to the head
+   * @param data - the data value
+   */
   push(data) {
     if (this.head === null) {
       this.head = new Node(data);
@@ -22,6 +34,9 @@ export default class LinkedList {
     this.size++;
   }
 
+  /**
+   * Remove the last Node from the list
+   */
   remove() {
     if (this.head === null) throw new Error('Cannot remove from empty linked list.');
 
@@ -42,6 +57,10 @@ export default class LinkedList {
     this.size--;
   }
 
+  /**
+   * Remove the first element of the list
+   * and reassign the head to the next element
+   */
   removeFirst() {
     if (this.head === null) throw new Error('Cannot remove from empty linked list.');
 
