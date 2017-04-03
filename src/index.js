@@ -41,4 +41,16 @@ export default class LinkedList {
     previous.next = current.next;
     this.size--;
   }
+
+  removeFirst() {
+    if (this.head === null) throw new Error('Cannot remove from empty linked list.');
+
+    if (this.size === 1) {
+      this.head = null;
+      return;
+    }
+
+    this.head = this.head.next;
+    this.size--;
+  }
 }
