@@ -12,4 +12,4 @@ There are three types of linked lists - singly linked list, as described above. 
 
 **This repo implements the singly linked list.**
 
-Although not that usefully for production, taken the dynamic nature of JS arrays, this project shows that it's possible to implement such a data structure.
+Although not that usefully for production, taken the dynamic nature of JS arrays, this project shows that it's possible to implement such data structure in plain JavaScript.
