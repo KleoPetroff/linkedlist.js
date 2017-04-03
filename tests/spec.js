@@ -42,4 +42,32 @@ describe('Linked List', function() {
     instance.push(3);
     expect(instance.size).to.equal(2);
   });
+
+  it('should have remove method', () => {
+    const instance = new LinkedList();
+    expect(instance.remove).to.exist;
+  });
+
+  it('should throw if the linked list is empty', () => {
+    const instance = new LinkedList();
+
+    expect(() => instance.remove(1)).to.throw('Cannot remove from empty linked list.');
+  });
+
+  it('should remove the last element of the list', () => {
+    const instance = new LinkedList();
+    instance.push(1);
+    instance.push(2);
+    instance.remove();
+
+    expect(instance.head).to.deep.equal({data: 2, next: null});
+  });
+
+  it('should remove the only element in a one-element list', () => {
+    const instance = new LinkedList();
+    instance.push(2);
+    instance.remove();
+
+    expect(instance.head).to.be.null;
+  });
 });

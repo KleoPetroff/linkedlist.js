@@ -21,4 +21,24 @@ export default class LinkedList {
 
     this.size++;
   }
+
+  remove() {
+    if (this.head === null) throw new Error('Cannot remove from empty linked list.');
+
+    if (this.size === 1) {
+      this.head = null;
+      return;
+    }
+
+    let current = this.head;
+    let previous = null;
+
+    while (current.next !== null) {
+      previous = current;
+      current = current.next;
+    }
+
+    previous.next = current.next;
+    this.size--;
+  }
 }
