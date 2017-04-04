@@ -34,6 +34,10 @@ export default class LinkedList {
     this.size++;
   }
 
+  /**
+   * Insert a new Node at the end of the list
+   * @param data - the data value
+   */
   insertLast(data) {
     if (this.head === null) {
       this.head = new Node(data);
