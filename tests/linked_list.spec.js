@@ -22,30 +22,30 @@ describe('Linked List', function() {
     expect(instance.size).to.equal(0);
   });
 
-  it('should have a public push method', () => {
-    expect(instance.push).to.exist;
+  it('should have a public insert method', () => {
+    expect(instance.insert).to.exist;
   });
 
-  it('push should create a new node', () => {
-    instance.push(1);
+  it('insert should create a new node', () => {
+    instance.insert(1);
     expect(instance.head).to.deep.equal({data: 1, next: null});
   });
 
   it('head should always be the first element in the list', () => {
-    instance.push(1);
-    instance.push(2);
+    instance.insert(1);
+    instance.insert(2);
     expect(instance.head).to.deep.equal({data: 2, next: { data: 1, next: null }});
   })
 
   it('next should link to the next node', () => {
-    instance.push(2);
-    instance.push(3);
+    instance.insert(2);
+    instance.insert(3);
     expect(instance.head.next).to.deep.equal({data: 2, next: null});
   });
 
   it('should progressively increment the size', () => {
-    instance.push(2);
-    instance.push(3);
+    instance.insert(2);
+    instance.insert(3);
     expect(instance.size).to.equal(2);
   });
 
@@ -58,15 +58,15 @@ describe('Linked List', function() {
   });
 
   it('should remove the last element of the list', () => {
-    instance.push(1);
-    instance.push(2);
+    instance.insert(1);
+    instance.insert(2);
     instance.remove();
 
     expect(instance.head).to.deep.equal({data: 2, next: null});
   });
 
   it('should remove the only element in a one-element list', () => {
-    instance.push(2);
+    instance.insert(2);
     instance.remove();
 
     expect(instance.head).to.be.null;
@@ -81,23 +81,23 @@ describe('Linked List', function() {
   });
 
   it('should remove the single element in the list', () => {
-    instance.push(2);
+    instance.insert(2);
     instance.removeFirst();
 
     expect(instance.head).to.be.null;
   });
 
   it('should remove the first element in the list', () => {
-    instance.push(2);
-    instance.push(1);
+    instance.insert(2);
+    instance.insert(1);
     instance.removeFirst();
 
     expect(instance.head).to.deep.equal({ data: 2, next: null });
   });
 
   it('should decrease the size on removeFirst', () => {
-    instance.push(2);
-    instance.push(1);
+    instance.insert(2);
+    instance.insert(1);
     instance.removeFirst();
 
     expect(instance.size).to.equal(1);

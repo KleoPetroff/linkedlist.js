@@ -23,7 +23,7 @@ export default class LinkedList {
    * Prepend a new Node to the list and assign it to the head
    * @param data - the data value
    */
-  push(data) {
+  insert(data) {
     if (this.head === null) {
       this.head = new Node(data);
     } else {
