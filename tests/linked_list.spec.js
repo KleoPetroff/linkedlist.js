@@ -102,4 +102,23 @@ describe('Linked List', function() {
 
     expect(instance.size).to.equal(1);
   });
+
+  it('should have a insertLast method', () => {
+    expect(instance.insertLast).to.exist;
+  });
+
+  it('insertLast should increment the size of the list', () => {
+    instance.insertLast(1);
+    instance.insertLast(2);
+
+    expect(instance.size).to.equal(2);
+  });
+
+  it('insertLast should insert at the end of the list', () => {
+    instance.insertLast(1);
+    instance.insertLast(2);
+    instance.insertLast(3);
+
+    expect(instance.head).to.deep.equal({ data: 1, next: { data: 2, next: { data: 3, next: null}}});
+  })
 });

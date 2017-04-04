@@ -34,6 +34,21 @@ export default class LinkedList {
     this.size++;
   }
 
+  insertLast(data) {
+    if (this.head === null) {
+      this.head = new Node(data);
+    } else {
+      let current = this.head;
+
+      while (current.next !== null) {
+        current = current.next;
+      }
+
+      current.next = new Node(data);
+    }
+
+    this.size++;
+  }
   /**
    * Remove the last Node from the list
    */
